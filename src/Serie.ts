@@ -44,6 +44,10 @@ class Serie implements Entregable{
             setCreador(valor : string) : void{
                 this.creador = valor;
             }
+        //TOSTRING.
+            mostrarSerie(){
+                console.log(`Título: ${this.titulo}, Número de temporadas: ${this.numTemporadas}, Genero: ${this.genero}, Creador: ${this.creador}`);
+            }
 
         //INTERFACE.
             entregar(): void {
@@ -58,7 +62,13 @@ class Serie implements Entregable{
                 return this.entregado;
             }
 
-            compareTo(): void {
-                
+            compareTo(a : Serie): void {
+                if(this.numTemporadas > a.numTemporadas){
+                    console.log(`La serie: ${this.titulo} dura más que ${a.titulo}`);
+                }else if(this.numTemporadas < a.numTemporadas){
+                    console.log(`La serie: ${a.titulo} dura más que ${this.titulo}`);
+                }else{
+                    console.log("Las dos series duran los mismo.")
+                }
             }
 }

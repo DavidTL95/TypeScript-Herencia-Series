@@ -47,6 +47,10 @@ class Videojuego implements Entregable{
             setCompañia(valor : string) : void{
                 this.compañia = valor;
             }
+        //TOSTRING.
+            mostrarVideojuego(){
+                console.log(`Título: ${this.titulo}, Horas estimadas: ${this.horasEstimadas}, Genero: ${this.genero}, Compañía: ${this.compañia}`);
+            }
         //INTERFACE.
             entregar(): void {
                 this.entregado = true;
@@ -60,7 +64,13 @@ class Videojuego implements Entregable{
                 return this.entregado;
             }
     
-            compareTo(): void {
-                
+            compareTo(a : Videojuego): void {
+                if(this.horasEstimadas > a.horasEstimadas){
+                    console.log(`El videojuego: ${this.titulo} dura más que ${a.titulo}`);
+                }else if(this.horasEstimadas < a.horasEstimadas){
+                    console.log(`El videojuego: ${a.titulo} dura más que ${this.titulo}`);
+                }else{
+                    console.log("Los dos videojuegos duran los mismo.")
+                }
             }
 }

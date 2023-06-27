@@ -5,5 +5,5 @@ interface Entregable{
     entregar() : void;
     devolver() : void;
     isEntregado() : void;
-    compareTo() : void;
+    compareTo(a : object) : void;
 }

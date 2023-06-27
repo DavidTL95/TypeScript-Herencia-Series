@@ -35,6 +35,10 @@ class Videojuego {
     setCompañia(valor) {
         this.compañia = valor;
     }
+    //TOSTRING.
+    mostrarVideojuego() {
+        console.log(`Título: ${this.titulo}, Horas estimadas: ${this.horasEstimadas}, Genero: ${this.genero}, Compañía: ${this.compañia}`);
+    }
     //INTERFACE.
     entregar() {
         this.entregado = true;
@@ -45,6 +49,15 @@ class Videojuego {
     isEntregado() {
         return this.entregado;
     }
-    compareTo() {
+    compareTo(a) {
+        if (this.horasEstimadas > a.horasEstimadas) {
+            console.log(`El videojuego: ${this.titulo} dura más que ${a.titulo}`);
+        }
+        else if (this.horasEstimadas < a.horasEstimadas) {
+            console.log(`El videojuego: ${a.titulo} dura más que ${this.titulo}`);
+        }
+        else {
+            console.log("Los dos videojuegos duran los mismo.");
+        }
     }
 }
